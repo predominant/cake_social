@@ -48,6 +48,8 @@ Now you can just display the widget on any page with the following CakePHP view 
 
 Simple!
 
+Note: The ShareThis helper doesn't require the Session helper, its just included to show that other helpers go in there also, and to help copy+paste help vampires who after migrating to CakePHP 1.3, will get SessionHelper errors if they don't include it.
+
 ## Comments, Suggestions, and other... ##
 
 I'd be more than thrilled to hear anyones experiences with this CakeSocial plugin.
