@@ -1,4 +1,14 @@
 <?php
+/**
+ * Copyright 2010, Graham Weldon (http://grahamweldon.com)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @author Graham Weldon (http://grahamweldon.com)
+ * @copyright Copyright 2010, Graham Weldon (http://grahamweldon.com)
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
 
 App::import('Helper', array('CakeSocial.ShareThis', 'Html'));
 
