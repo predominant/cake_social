@@ -67,6 +67,18 @@ class ShareThisHelper extends AppHelper {
 	);
 
 /**
+ * Allowed styles
+ *
+ * @var array
+ */
+	protected $_styles = array(
+		'large',
+		'button',
+		'vcount',
+		'hcount',
+	);
+
+/**
  * Default options
  *
  * ### Options
@@ -137,7 +149,7 @@ class ShareThisHelper extends AppHelper {
 	public function socialType($type, $options = array()) {
 		$options = array_merge($this->_options, $options);
 		$class = 'st_' . $type;
-		if ($options['style'] === 'large' || $options['style'] === 'button') {
+		if (in_array($options['style'], $this->_styles)) {
 			$class .= '_' . $options['style'];
 		}
 		return $this->Html->tag('span', '', $class);
