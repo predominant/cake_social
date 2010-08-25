@@ -2,6 +2,14 @@
 
 The CakeSocial plugin for CakePHP allows for simple integration of social media into your CakePHP application.
 
+### Supported ###
+
+- [ShareThis](http://sharethis.com) for social link sharing and publicising. (Includes 44 social networks, including: Twitter, Facebook, MySpace, Slashdot, Reddit, and more)
+
+### Planned ###
+
+- [AddThis](http://addthis.com)
+
 ## CakePHP Version ##
 
 This plugin is built for CakePHP 1.3 and above.
