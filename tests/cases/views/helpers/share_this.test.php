@@ -101,6 +101,28 @@ class ShareThisHelperTestCase extends CakeTestCase {
 	}
 
 /**
+ * testSocialTypeStyleLarge
+ *
+ * @return void
+ */
+	public function testSocialTypeStyleLarge() {
+		$expected = '<span class="st_test_large"></span>';
+		$result = $this->ShareThis->socialType('test', array('style' => 'large'));
+		$this->assertIdentical($expected, $result);
+	}
+
+/**
+ * testSocialTypeStyleButton
+ *
+ * @return void
+ */
+	public function testSocialTypeStyleButton() {
+		$expected = '<span class="st_test_button"></span>';
+		$result = $this->ShareThis->socialType('test', array('style' => 'button'));
+		$this->assertIdentical($expected, $result);
+	}
+
+/**
  * testScripts
  *
  * @return void

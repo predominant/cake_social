@@ -74,6 +74,7 @@ class ShareThisHelper extends AppHelper {
  * - `sharethis` (boolean) Include the 'sharethis' button with the social type set. Default: true
  * - `publisher` (string) Your publisher ID obtained from [ShareThis](http://sharethis.com)
  * - `buttonJs` (string) URL to the Javascript for the ShareThis button
+ * - `style` (string) Style type to use: (none) is default, 'large', or 'button'
  *
  * @var array
  */
@@ -81,6 +82,7 @@ class ShareThisHelper extends AppHelper {
 		'sharethis' => true,
 		'publisher' => '',
 		'buttonJs' => 'http://w.sharethis.com/button/buttons.js',
+		'style' => '',
 	);
 
 /**
@@ -132,8 +134,13 @@ class ShareThisHelper extends AppHelper {
  * @param string $type Social type key (See ShareThisHelper::$_types)
  * @return string Social Type HTML
  */
-	public function socialType($type) {
-		return $this->Html->tag('span', '', 'st_' . $type);
+	public function socialType($type, $options = array()) {
+		$options = array_merge($this->_options, $options);
+		$class = 'st_' . $type;
+		if ($options['style'] === 'large' || $options['style'] === 'button') {
+			$class .= '_' . $options['style'];
+		}
+		return $this->Html->tag('span', '', $class);
 	}
 
 /**
