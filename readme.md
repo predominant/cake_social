@@ -28,7 +28,7 @@ The result will be a `cake_social` directory under your `plugins` directory.
 
 Navigate to the root of your application, and add the CakeSocial plugin as a submodule with the following git command:
 
-	git submodule add plugins/cake_social http://github.com/predominant/cake_social.git
+	git submodule add http://github.com/predominant/cake_social.git plugins/cake_social
 	git submodule init
 	git submodule update
 
