@@ -95,6 +95,7 @@ class ShareThisHelper extends AppHelper {
 		'publisher' => '',
 		'buttonJs' => 'http://w.sharethis.com/button/buttons.js',
 		'style' => '',
+		'embeds' => 'true'
 	);
 
 /**
@@ -165,7 +166,7 @@ class ShareThisHelper extends AppHelper {
 		$options = array_merge($this->_options, $options);
 		$this->Html->script($options['buttonJs'], array('inline' => false));
 		$this->Html->ScriptBlock(sprintf(
-			'stLight.options({publisher:\'%s\'});', $options['publisher']
+			'stLight.options({publisher:\'%s\', embeds:%s});', $options['publisher'], $options['embeds']
 		), array('inline' => false));
 	}
 }
