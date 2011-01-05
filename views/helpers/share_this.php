@@ -149,11 +149,17 @@ class ShareThisHelper extends AppHelper {
  */
 	public function socialType($type, $options = array()) {
 		$options = array_merge($this->_options, $options);
-		$class = 'st_' . $type;
+		$attributes = array('class' => 'st_' . $type);
 		if (in_array($options['style'], $this->_styles)) {
-			$class .= '_' . $options['style'];
+			$attributes['class'] .= '_' . $options['style'];
 		}
-		return $this->Html->tag('span', '', $class);
+		if (!empty($options['url'])) {
+			$attributes['st_url'] = $this->url($options['url'], true);
+		}
+		if (!empty($options['title'])) {
+			$attributes['st_title'] = $options['title'];
+		}
+		return $this->Html->tag('span', '', $attributes);
 	}
 
 /**

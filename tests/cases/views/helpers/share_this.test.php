@@ -123,6 +123,19 @@ class ShareThisHelperTestCase extends CakeTestCase {
 	}
 
 /**
+ * testSocialType with a custom page
+ *
+ * @return void
+ */
+	public function testSocialTypeStyleCustomPage() {
+		$expected = '<span class="st_test" st_url="http://example.com" st_title="42"></span>';
+		$result = $this->ShareThis->socialType(
+			'test',
+			array('url' => 'http://example.com', 'title' => 42));
+		$this->assertIdentical($expected, $result);
+	}
+
+/**
  * testScripts
  *
  * @return void
