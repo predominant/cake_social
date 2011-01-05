@@ -150,7 +150,7 @@ class ShareThisHelperTestCase extends CakeTestCase {
 			$result,
 			array(
 				'<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>',
-				'<script type="text/javascript">//<![CDATA[stLight.options({publisher:\'\'});//]]></script>'
+				'<script type="text/javascript">//<![CDATA[stLight.options({publisher:\'\', embeds:true});//]]></script>'
 			)
 		);
 	}
@@ -170,7 +170,7 @@ class ShareThisHelperTestCase extends CakeTestCase {
 			$result,
 			array(
 				'<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>',
-				'<script type="text/javascript">//<![CDATA[stLight.options({publisher:\'Mr. Man\'});//]]></script>'
+				'<script type="text/javascript">//<![CDATA[stLight.options({publisher:\'Mr. Man\', embeds:true});//]]></script>'
 			)
 		);
 	}
