@@ -63,3 +63,9 @@ Note: The ShareThis helper doesn't require the Session helper, its just included
 I'd be more than thrilled to hear anyones experiences with this CakeSocial plugin.
 
 If you have suggestions, enhancement requests, or bugs, please let me know.
+
+## Contributors ##
+
+* Predominant (Graham Weldon) [Website](http://grahamweldon.com)
+* jose_zap (José Lorenzo Rodríguez)
+* real34 (Pierre Martin) [Website](http://www.pierre-martin.fr)
