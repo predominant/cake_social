@@ -109,7 +109,8 @@ class ShareThisHelper extends AppHelper {
  *
  * @param array $options 
  */
-	public function __construct($options = array()) {
+	public function __construct(View $View, $options = array()) {
+		parent::__construct($View, $options);
 		$this->_options = array_merge($this->_options, $options);
 	}
 
