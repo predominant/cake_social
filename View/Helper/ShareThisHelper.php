@@ -35,8 +35,7 @@ class ShareThisHelper extends AppHelper {
 	protected $_defaultTypes = array(
 		'twitter',
 		'facebook',
-		'ybuzz',
-		'gbuzz',
+		'plusone',
 		'email',
 	);
 
@@ -51,7 +50,7 @@ class ShareThisHelper extends AppHelper {
 		'care2', 'current',
 		'dealsplus', 'delicious', 'digg', 'dilgo',
 		'facebook', 'fark', 'faves', 'fresqui', 'friendfeed', 'funp',
-		'google_bmarks',
+		'gbuzz', 'google_bmarks',
 		'kirsty',
 		'linkedin',
 		'meaneame', 'messenger', 'mister_wong', 'mixx', 'myspace',
@@ -95,7 +94,8 @@ class ShareThisHelper extends AppHelper {
 		'publisher' => '',
 		'buttonJs' => 'http://w.sharethis.com/button/buttons.js',
 		'style' => '',
-		'embeds' => 'true'
+		'embeds' => 'true',
+		'oauth' => true,
 	);
 
 /**
@@ -139,7 +139,7 @@ class ShareThisHelper extends AppHelper {
 			$result .= $this->socialType('sharethis');
 		}
 		$this->_scripts($options);
-		return $result;
+		return $this->Html->scriptBlock('var switchTo5x=true;') . $result;
 	}
 
 /**
