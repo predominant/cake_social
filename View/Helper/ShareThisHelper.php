@@ -160,6 +160,9 @@ class ShareThisHelper extends AppHelper {
 		if (!empty($options['title'])) {
 			$attributes['st_title'] = $options['title'];
 		}
+		if (array_key_exists('via', $options) && is_string($options['via'])) {
+			$attributes['st_via'] = $options['via'];
+		}
 		return $this->Html->tag('span', '', $attributes);
 	}
 
