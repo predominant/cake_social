@@ -70,10 +70,10 @@ class ShareThisHelperTestCase extends CakeTestCase {
  * @return void
  */
 	public function startTest() {
-		$this->ShareThis = new ShareThisHelper();
-		$this->ShareThis->Html = new HtmlHelper();
 		$this->View =& new TheView(new TheJsTestController());
 		ClassRegistry::addObject('view', $this->View);
+		$this->ShareThis = new ShareThisHelper($this->View);
+		$this->ShareThis->Html = new HtmlHelper($this->View);
 	}
 
 /**
@@ -132,6 +132,19 @@ class ShareThisHelperTestCase extends CakeTestCase {
 		$result = $this->ShareThis->socialType(
 			'test',
 			array('url' => 'http://example.com', 'title' => 42));
+		$this->assertIdentical($expected, $result);
+	}
+
+/**
+ * testSocialType with a custom "via" parameter, useful for Twitter for instance
+ *
+ * @return void
+ */
+	public function testSocialTypeCustomViaText() {
+		$expected = '<span class="st_test" st_via="cakephp"></span>';
+		$result = $this->ShareThis->socialType(
+			'test',
+			array('via' => 'cakephp'));
 		$this->assertIdentical($expected, $result);
 	}
 

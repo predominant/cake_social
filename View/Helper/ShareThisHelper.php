@@ -132,8 +132,12 @@ class ShareThisHelper extends AppHelper {
 
 		$options = array_merge($this->_options, $options);
 		$result = '';
-		foreach ($types as $type) {
-			$result .= $this->socialType($type);
+		foreach ($types as $type => $typeOptions) {
+			if (is_string($typeOptions)) {
+				$type = $typeOptions;
+				$typeOptions = array();
+			}
+			$result .= $this->socialType($type, $typeOptions);
 		}
 		if ($options['sharethis']) {
 			$result .= $this->socialType('sharethis');
@@ -159,6 +163,9 @@ class ShareThisHelper extends AppHelper {
 		}
 		if (!empty($options['title'])) {
 			$attributes['st_title'] = $options['title'];
+		}
+		if (array_key_exists('via', $options) && is_string($options['via'])) {
+			$attributes['st_via'] = $options['via'];
 		}
 		return $this->Html->tag('span', '', $attributes);
 	}
