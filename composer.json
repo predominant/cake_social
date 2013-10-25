@@ -1,0 +1,16 @@
+{
+	"name": "predominant/cake_social",
+	"type": "cakephp-plugin",
+	"description": "Simple integration of social media into your CakePHP application.",
+	"keywords": ["cakephp","helper","social"],
+	"licence": "MIT",
+	"authors": [
+		{
+			"name": "Graham Weldon",
+			"homepage": "http://grahamweldon.com/"
+		}
+	],
+	"require": {
+		"composer/installers": "*"
+	}
+}
